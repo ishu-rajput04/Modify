@@ -1,0 +1,26 @@
+.form-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  // background-color: rgb(189, 189, 186);
+  .form-wrapper {
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      h1 {
+        color: rgb(244, 116, 5);
+        font-weight: 500;
+        font-size: 2.5rem;
+      }
+    }
+    p{
+        margin-top: 0.5rem;
+        .toggle{
+            color: rgb(244, 116, 5);
+            text-decoration: none;
+        }
+    }
+  }
+}

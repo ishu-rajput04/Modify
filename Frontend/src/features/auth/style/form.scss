@@ -1,0 +1,16 @@
+.label-input{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    label {
+      font-size: 1.1rem;
+    }
+    input{
+        min-width:20rem;
+        padding: 0.4rem 0.5rem;
+        font-size: 1.05rem;
+        border: none;
+        outline: none;
+        border-radius: 0.4rem;
+    }
+  }
