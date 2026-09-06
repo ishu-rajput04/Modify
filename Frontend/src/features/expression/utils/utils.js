@@ -79,12 +79,12 @@ export function detect({ faceLandmarkerRef, videoRef, setExpression, setScores }
         // 4. Detect Expression
         // -------------------------
 
-        const detected = detectExpression(blendshapes);
-
+        var detected = detectExpression(blendshapes);
         setExpression(detected);
     } else {
         setExpression("👤 No Face");
     }
+    return detected;
 }
 
 // =================================
@@ -105,19 +105,19 @@ export function detectExpression(b) {
         3;
 
     const mouthFrown = ((b.mouthFrownLeft || 0) + (b.mouthFrownRight || 0)) / 2;
-    console.log(mouthFrown, browUp);
+    // console.log(mouthFrown, browUp);
 
     if (smile > 0.45) {
-        return "😀 Happy";
+        return "happy";
     }
     if (jawOpen > 0.45 && browUp > 0.035) {
-        return "😮 Surprised";
+        return "surprised";
     }
     if (browDown > 0.45) {
-        return "😠 Angry";
+        return "angry";
     }
     if (mouthFrown > 0.0055 && browUp < 0.06) {
-        return "😢 Sad";
+        return "sad";
     }
     return "😐 Neutral";
 }

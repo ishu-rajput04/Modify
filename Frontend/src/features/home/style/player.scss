@@ -1,0 +1,128 @@
+.player {
+  width: 100%;
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid rgba(242, 200, 75, 0.2);
+  border-radius: 1rem;
+  background: linear-gradient(145deg, #211f16, #0e0e0c);
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.3);
+}
+
+.player__identity {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.player__poster {
+  width: 4.5rem;
+  height: 4.5rem;
+  flex: 0 0 auto;
+  object-fit: cover;
+  border-radius: 0.65rem;
+}
+
+.player__eyebrow {
+  margin-bottom: 0.35rem;
+  color: #f2c84b;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.player h2 {
+  overflow: hidden;
+  margin: 0;
+  color: #fff7dc;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.player__timeline {
+  margin:1rem 0rem 0.5rem ;
+}
+
+.player__timeline input {
+  width: 100%;
+  accent-color: #d3a84c;
+  cursor: pointer;
+}
+
+.player__time {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.3rem;
+  color: #b7ad91;
+  font-size: 0.75rem;
+}
+
+.player__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.player button {
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border: 1px solid rgba(242, 200, 75, 0.28);
+  border-radius: 50%;
+  background: transparent;
+  color: #fff7dc;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition:
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+
+.player button:hover {
+  border-color: #f2c84b;
+  transform: translateY(-2px);
+}
+
+.player .player__play {
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 0;
+  background: #f2c84b;
+  color: #171308;
+  font-size: 1.2rem;
+}
+
+.player__speed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  margin-top: 1.2rem;
+  color: #b7ad91;
+  font-size: 0.8rem;
+}
+
+.player select {
+  padding: 0.35rem 0.5rem;
+  border: 1px solid rgba(242, 200, 75, 0.28);
+  border-radius: 0.35rem;
+  background: #0b0b0a;
+  color: #fff7dc;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .player {
+    margin-top: 1.25rem;
+  }
+
+  .player__poster {
+    width: 3.75rem;
+    height: 3.75rem;
+  }
+}

@@ -1,4 +1,4 @@
-import React, { use, useState } from "react";
+import React, { useState } from "react";
 import Form from "../components/Form";
 import Button from "../../../shared/components/Button";
 import "../style/login.scss";
@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 
 const Login = () => {
-  const { handleLogin, user, loading, setLoading } = useAuth();
+  const { handleLogin, loading, } = useAuth();
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -19,7 +19,7 @@ const Login = () => {
     navigate("/");
   }
   if (loading) {
-    return <main>Loading..</main>;
+    return <main>Login page Loading...</main>;
   }
   return (
     <main className="form-page">

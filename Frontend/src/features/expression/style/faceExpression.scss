@@ -1,29 +1,90 @@
-.wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    h1{
-        font-weight: 400;
-    }
-    video{
-        height: 20rem;
-        // aspect-ratio: 1/1;
-        border-radius: 0.5rem;
-        
-    }
-    .detect{
-        transition: all 0.1s ease-in-out;
-        cursor: pointer;
-        padding:0.4rem 1rem;
-        border-radius: 0.5rem;
-        font-size: 1.5rem;
-        border: none;
-        background-color: black;
-        color: white;
-        box-shadow: 0px 0px 5px rgb(255, 254, 254);
-        &:active{
-            transform: scale(0.9);
-        }
-    }
+.expression-panel {
+  min-width: 0;
+  padding: clamp(1rem, 2vw, 1.35rem);
+  border: 1px solid rgba(242, 200, 75, 0.2);
+  border-radius: 1.25rem;
+  background: linear-gradient(145deg, #211f16, #0e0e0c);
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.24);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.expression-panel__heading {
+  width: 100%;
+}
+
+.expression-panel__eyebrow {
+  margin-bottom: 0.4rem;
+  color: #f2c84b;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.expression-panel h2 {
+  color: #fff7dc;
+  font-size: clamp(1.2rem, 2.4vw, 1.55rem);
+  font-weight: 500;
+}
+
+.expression-panel video {
+  width: 100%;
+  max-height: 14rem;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid rgba(242, 200, 75, 0.3);
+  border-radius: 0.8rem;
+  background: #080807;
+}
+
+.expression-panel__result {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-left: 3px solid #f2c84b;
+  background: rgba(242, 200, 75, 0.08);
+}
+
+.expression-panel__result span {
+  color: #b7ad91;
+  font-size: 0.78rem;
+}
+
+.expression-panel__result strong {
+  color: #f2c84b;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.expression-panel .detect {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 0;
+  border-radius: 0.55rem;
+  background: #f2c84b;
+  color: #171308;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition:
+    transform 160ms ease,
+    background 160ms ease;
+}
+
+.expression-panel .detect:hover {
+  background: #ffd866;
+  transform: translateY(-2px);
+}
+
+.expression-panel .detect:active {
+  transform: translateY(0);
 }

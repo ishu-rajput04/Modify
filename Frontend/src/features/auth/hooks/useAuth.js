@@ -9,11 +9,10 @@ export const useAuth = () => {
     async function handleRegister({ email, username, password }) {
         setLoading(true)
         const data = await register({ email, username, password })
-        console.log(data)
         setUser(data)
         setLoading(false)
-
     }
+
     async function handleLogin({ email, username, password }) {
         setLoading(true)
         const data = await login({ email, username, password })
@@ -21,10 +20,15 @@ export const useAuth = () => {
         setLoading(false)
     }
     async function handleGetMe() {
-        setLoading(true)
-        const data = await getMe()
-        setUser(data.user)
-        setLoading(false)
+        try {
+            setLoading(true)
+            const data = await getMe()
+
+            setUser(data.user)
+        }
+        finally {
+            setLoading(false)
+        }
     }
     async function handleLogOut() {
         setLoading(true)
@@ -32,9 +36,9 @@ export const useAuth = () => {
         setUser(null)
         setLoading(false)
     }
-    useEffect(()=>{
+    useEffect(() => {
         handleGetMe()
-    },[])
+    }, [])
     return ({
         handleRegister, handleLogin, handleGetMe, handleLogOut, user, loading, setLoading, setUser
     })

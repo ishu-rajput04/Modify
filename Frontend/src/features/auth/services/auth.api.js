@@ -6,29 +6,25 @@ const api = axios.create({
 })
 
 export async function register({ email, username, password }) {
-    const respone = await api.post("/route/auth/register", {
+    const response = await api.post("/route/auth/register", {
         email, username, password
     })
-    console.log(respone.data)
-    return respone.data
+    return response.data
 }
 
 export async function login({ email, username, password }) {
-    const respone = await api.post("/route/auth/login", {
+    const response = await api.post("/route/auth/login", {
         email, username, password
     })
-    console.log(respone.data)
-    return respone.data
+    return response.data
 }
 
 export async function getMe() {
-    const respone = await api.get("/route/auth/get-me")
-    console.log(respone.data)
-    return respone.data
+    const response = await api.get("/route/auth/get-me")
+    return response.data
 }
 
 export async function logOut() {
-    const respone = await api.get("/route/auth/logout")
-    console.log(respone.data)
-    return respone.data
+    const response = await api.get("/route/auth/logout")
+    return response.data
 }

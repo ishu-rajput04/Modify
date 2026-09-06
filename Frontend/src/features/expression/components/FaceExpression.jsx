@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { start, detect,detectExpression} from "../utils/utils";
+import { start, detect, detectExpression } from "../utils/utils";
 import "../style/faceExpression.scss";
 
-function FaceExpression() {
+function FaceExpression({ onClick = () => {} }) {
   const videoRef = useRef(null);
   const faceLandmarkerRef = useRef(null);
   const animationRef = useRef(null);
@@ -22,24 +22,36 @@ function FaceExpression() {
     };
   }, []);
 
+  async function handleClick() {
+    const mood = detect({
+      faceLandmarkerRef,
+      videoRef,
+      setExpression,
+      setScores,
+    });
+
+    onClick(mood);
+  }
+
   return (
-    <main>
+    <section className="expression-panel" aria-labelledby="expression-title">
       <div className="wrapper">
-        <h1>Face Expression Detector</h1>
+        <div className="expression-panel__heading">
+          <p className="expression-panel__eyebrow">Live camera scan</p>
+          <h2 id="expression-title">What are you feeling?</h2>
+        </div>
 
         <video ref={videoRef} autoPlay playsInline muted />
 
-        <h2>{expression}</h2>
-        <button
-          onClick={() => {
-            detect({ faceLandmarkerRef, videoRef,setExpression,setScores });
-          }}
-          className="detect"
-        >
+        <div className="expression-panel__result">
+          <span>Detected mood</span>
+          <strong>{expression}</strong>
+        </div>
+        <button onClick={handleClick} className="detect">
           Detect Expression
         </button>
       </div>
-    </main>
+    </section>
   );
 }
 

@@ -5,7 +5,7 @@ import { Navigate } from "react-router-dom";
 const Protected = ({ children }) => {
   const { user, loading } = useAuth();
   if (loading) {
-    return <h1>Loading...</h1>;
+    return <main><h1>Loading...</h1></main>;
   }
   if (!user) {
     return <Navigate to={"/login"} />;
@@ -13,4 +13,4 @@ const Protected = ({ children }) => {
   return children;
 };
 
-export default Protected;
+export default Protected; 
