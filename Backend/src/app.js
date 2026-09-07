@@ -7,6 +7,7 @@ const app = express()
 const cookieParser = require("cookie-parser")
 
 //middleware 
+app.use(express.static("./public"))
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
